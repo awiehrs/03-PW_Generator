@@ -6,10 +6,8 @@ generateBtn.addEventListener("click", writePassword);
 
 // Write password to the #password input
 function writePassword() { 
-  //var password = generatePassword();
   var passwordText = document.querySelector("#password");
 
-  //passwordText.value = password;
   var passwordLength = prompt("Choose a length for your password between 8-128 characters");
     if (passwordLength < 8 ){
       alert("Your password must be at least 8 characters long. Please try again.");
@@ -54,6 +52,7 @@ function generatePassword(passwordLength, upperCase, lowerCase, specialChar, num
       passwordText = passwordText + String.fromCharCode(Math.floor(Math.random()*10)+48);
       userPasswordLength++;
     }
+    
     if ((specialChar === true) && (userPasswordLength < passwordLength)) {
       passwordText = passwordText + String.fromCharCode(Math.floor(Math.random()*15)+33);
       userPasswordLength++;
